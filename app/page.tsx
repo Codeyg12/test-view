@@ -2,6 +2,7 @@
 import GithubUsers from "./components/GithubUsers";
 import LineGraph from "./components/LineGraph";
 import PieChart from "./components/PieChart";
+import TreeMap from "./components/TreeMap";
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
         <PieChart chartData={[{ testType: 'Steps', failures: 37, passes: 63 }]} />
       </div> */}
       {/* <GithubUsers /> */}
-      <div className="w-1/2">
+      {/* <div className="w-1/2">
         <LineGraph />
-      </div>
+      </div> */}
+      <TreeMap />
     </>
   );
 }
