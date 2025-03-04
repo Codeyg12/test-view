@@ -2,6 +2,7 @@
 import GithubUsers from "./components/GithubUsers";
 import LineGraph from "./components/LineGraph";
 import PieChart from "./components/PieChart";
+import TestScenariosChart from "./components/TestScenario";
 import TreeMap from "./components/TreeMap";
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
       {/* <div className="w-1/2">
         <LineGraph />
       </div> */}
-      <TreeMap />
+      {/* <TreeMap /> */}
+      <TestScenariosChart />
     </>
   );
 }
