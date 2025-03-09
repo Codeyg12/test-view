@@ -2,6 +2,7 @@
 import GithubUsers from "./components/GithubUsers";
 import LineGraph from "./components/LineGraph";
 import PieChart from "./components/PieChart";
+import TestTable from "./components/TestTable";
 import TestScenariosChart from "./components/TestScenario";
 import TreeMap from "./components/TreeMap";
 
@@ -19,7 +20,8 @@ export default function Home() {
         <LineGraph />
       </div> */}
       {/* <TreeMap /> */}
-      <TestScenariosChart />
+      {/* <TestScenariosChart /> */}
+      <TestTable />
     </>
   );
 }
