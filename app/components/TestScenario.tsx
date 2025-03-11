@@ -135,7 +135,9 @@ const TestScenariosChart: React.FC<TestScenariosChartProps> = ({ testData }) => 
             name: scenario.name,
             value: testData.testType === 'Steps' ? testData.scenarios.length : scenario.steps,
             itemStyle: {
-              color: scenario.status === 'pass' ? '#4CAF50' : '#F44336'
+              color: scenario.status === 'pass' ? '#4CAF50' : '#F44336',
+            borderColor: '#fff',
+            borderWidth: 1
             }
           }))
         }

@@ -11,9 +11,9 @@ export default function Home() {
     <>
     <h1 className="text-center">Test Repo</h1>
       <div className="flex mb-10">
-        <PieChart chartData={[{ testType: 'Features', passes: 75, failures: 25 }]} />
-        <PieChart chartData={[{ testType: 'Scenarios', passes: 50, failures: 50 }]} />
-        <PieChart chartData={[{ testType: 'Steps', passes: 63, failures: 37 }]} />
+        <PieChart chartData={[{ testType: 'Features', passes: 58, failures: 42 }]} />
+        <PieChart chartData={[{ testType: 'Scenarios', passes: 75, failures: 25 }]} />
+        <PieChart chartData={[{ testType: 'Steps', passes: 83, failures: 17 }]} />
       </div>
       {/* <GithubUsers /> */}
       {/* <div className="w-1/2">

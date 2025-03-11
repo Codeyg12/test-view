@@ -2,10 +2,11 @@
 
 import PieChart from "@/components/PieChart";
 import { useState } from "react";
-import { IconButton } from "@mui/material";
+import { IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import TestScenariosChart from "@/components/TestScenario";
 import Link from "next/link";
+import TableHeader from "@/components/TableHeader";
 
 // interface ChartData {
 //   testType: string;
@@ -97,6 +98,31 @@ export default function FeatureComponent() {
           <ArrowForwardIos fontSize="large" />
         </IconButton>
       </div>
+      <TableContainer
+            component={Paper}
+            className="w-full"
+            sx={{ maxHeight: '500px' }}
+        >
+      <Table>
+      <TableHeader />
+      <TableBody>
+          <TableRow>
+            <TableCell sx={{ borderRight: '1px solid black' }}>test/repo/UserLoginTests.feature</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>7</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>3</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
+            <TableCell sx={{ borderRight: '1px solid black' }}>10</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>6</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>4</TableCell>
+            <TableCell sx={{ borderRight: '1px solid black' }}>10</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>00:00:00</TableCell>
+            <TableCell sx={{ borderRight: '1px solid #ddd' }}>Failed</TableCell>
+          </TableRow>
+      </TableBody>
+      </Table>
+      </TableContainer>
     </>
   );
 }
