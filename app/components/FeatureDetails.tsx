@@ -3,6 +3,8 @@
 import { IconButton, Typography } from "@mui/material";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useState } from "react";
 
 const FeatureDetailsData = [
@@ -70,9 +72,28 @@ const FeatureDetails = () => {
     const handleStepsClick = (index: number) => {
         setOpenStepsSection(openStepsSection.map((state, i) => (i === index ? !state : state)));
     }
+
+    const handleCloseAll = () => {
+        setOpenScenarios(Array(FeatureDetailsData.length).fill(false));
+        setOpenStepsSection(Array(FeatureDetailsData.length).fill(false));
+    }
+
+    const handleOpenAll = () => {
+        setOpenScenarios(Array(FeatureDetailsData.length).fill(true));
+        setOpenStepsSection(Array(FeatureDetailsData.length).fill(true));
+    }
     
     return (
       <>
+      <div className="flex justify-end">
+
+        <IconButton onClick={handleCloseAll} className="text-white">
+            <ExpandLessIcon />
+        </IconButton>
+      <IconButton onClick={handleOpenAll} className="text-white">
+        <ExpandMoreIcon />
+      </IconButton>
+      </div>
         <Typography className="bg-red-200 pl-3 text-black">
           <span className="font-bold">Feature </span>{" "}
           test/repo/UserLoginTests.feature

@@ -5,11 +5,11 @@ import { useState } from "react";
 import { IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import TestScenariosChart from "@/components/TestScenario";
-import Link from "next/link";
-import TableHeader from "@/components/TableHeader";
+import Link from "next/link"; 
 import GithubUsers from "@/components/GithubUsers";
 import LineGraph from "@/components/LineGraph";
 import FeatureDetails from "@/components/FeatureDetails";
+import TestTable from "@/components/TestTable";
 
 // interface ChartData {
 //   testType: string;
@@ -52,8 +52,8 @@ const pieToTreeCharts: pieToTreeData[] = [
   },
   {
     testType: "Steps",
-    total: 10,
-    passed: 7,
+    total: 20,
+    passed: 17,
     failed: 3,
     scenarios: [
       { name: 'Click input', status: 'pass' },
@@ -66,6 +66,13 @@ const pieToTreeCharts: pieToTreeData[] = [
       { name: 'Display message', status: 'pass' },
       { name: 'Log out', status: 'pass' },
       { name: 'Redirect user', status: 'fail' },
+      { name: 'Update profile', status: 'pass' },
+      { name: 'Delete account', status: 'pass' },
+      { name: 'Update settings', status: 'pass' },
+      { name: 'Change password', status: 'pass' },
+      { name: 'Reset password', status: 'pass' },
+      { name: 'Send email', status: 'pass' },
+      { name: 'Verify email', status: 'pass' },
     ],
   },
 ];
@@ -87,7 +94,7 @@ export default function FeatureComponent() {
 
   return (
     <>
-      <h1 className="text-center text-xl font-semibold mb-6"><Link href={"/"}>User Login Feature</Link></h1>
+      <h1 className="text-center text-xl font-semibold mb-6"><Link href={"/"} className="visited:text-white no-underline">User Login Feature</Link></h1>
       <div className="flex justify-evenly">
         <IconButton onClick={prevChart} className="text-gray-600 hover:text-gray-900">
           <ArrowBackIos fontSize="large" />
@@ -100,42 +107,32 @@ export default function FeatureComponent() {
         <IconButton onClick={nextChart} className="text-gray-600 hover:text-gray-900">
           <ArrowForwardIos fontSize="large" />
         </IconButton>
-       
+
       </div>
       <div className="flex justify-evenly my-8">
-  <div className="w-1/2">
-    <LineGraph />
-  </div>
-  <div className="flex-1 max-w-md mx-4">
+        <div className="w-1/2">
+          <LineGraph />
+        </div>
+        <div className="flex-1 max-w-md mx-4">
 
-    <GithubUsers />
-  </div>
-</div>
-      <TableContainer
-            component={Paper}
-            className="w-full mb-10"
-            sx={{ maxHeight: '500px' }}
-        >
-      <Table>
-      <TableHeader />
-      <TableBody>
-          <TableRow>
-            <TableCell sx={{ borderRight: '1px solid black' }}>test/repo/UserLoginTests.feature</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>7</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>3</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>0</TableCell>
-            <TableCell sx={{ borderRight: '1px solid black' }}>10</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>6</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>4</TableCell>
-            <TableCell sx={{ borderRight: '1px solid black' }}>10</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>00:00:00</TableCell>
-            <TableCell sx={{ borderRight: '1px solid #ddd' }}>Failed</TableCell>
-          </TableRow>
-      </TableBody>
-      </Table>
-      </TableContainer>
+          <GithubUsers />
+        </div>
+      </div>
+
+      <TestTable dummyData={[{
+        feature: "LoginAuthentication",
+        steps: {
+          passed: 12,
+          failed: 2,
+          skipped: 1,
+          pending: 0,
+          undefined: 0,
+          total: 15
+        },
+        scenarios: { passed: 3, failed: 1, total: 4 },
+        duration: "2.5s",
+        status: "Failed"
+      }]} />
       <FeatureDetails />
     </>
   );

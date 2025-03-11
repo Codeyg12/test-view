@@ -5,6 +5,7 @@ import PieChart from "./components/PieChart";
 import TestTable from "./components/TestTable";
 import TestScenariosChart from "./components/TestScenario";
 import TreeMap from "./components/TreeMap";
+import dummyData from "../dummyData.json"
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       </div> */}
       {/* <TreeMap /> */}
       {/* <TestScenariosChart /> */}
-      <TestTable />
+      <TestTable dummyData={dummyData} />
     </>
   );
 }
