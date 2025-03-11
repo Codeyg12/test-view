@@ -7,6 +7,8 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import TestScenariosChart from "@/components/TestScenario";
 import Link from "next/link";
 import TableHeader from "@/components/TableHeader";
+import GithubUsers from "@/components/GithubUsers";
+import LineGraph from "@/components/LineGraph";
 
 // interface ChartData {
 //   testType: string;
@@ -97,7 +99,17 @@ export default function FeatureComponent() {
         <IconButton onClick={nextChart} className="text-gray-600 hover:text-gray-900">
           <ArrowForwardIos fontSize="large" />
         </IconButton>
+       
       </div>
+      <div className="flex justify-evenly my-8">
+  <div className="w-1/2">
+    <LineGraph />
+  </div>
+  <div className="flex-1 max-w-md mx-4">
+
+    <GithubUsers />
+  </div>
+</div>
       <TableContainer
             component={Paper}
             className="w-full"
