@@ -13,7 +13,6 @@ import {
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
-// Register components
 echarts.use([
   PieChart, 
   TreemapChart, 
@@ -22,6 +21,9 @@ echarts.use([
   LegendComponent, 
   CanvasRenderer
 ]);
+
+// const COLOR_PALETTE = ["#81ef51", "#f44336"];
+const COLOR_PALETTE = ['#4CAF50', '#F44336'];
 
 const TestScenariosChart = () => {
   const chartRef = useRef(null);
@@ -92,15 +94,14 @@ const TestScenariosChart = () => {
           data: [
             { 
               value: testData.features[0].passed, 
-              name: 'Passed', 
-              itemStyle: { color: '#4CAF50' } 
+              name: 'Passed',
             },
             { 
               value: testData.features[0].failed, 
-              name: 'Failed', 
-              itemStyle: { color: '#F44336' } 
+              name: 'Failed',
             }
-          ]
+          ],
+          color: COLOR_PALETTE
         }
       ]
     };
