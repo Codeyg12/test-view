@@ -17,7 +17,7 @@ const GithubUsers = () => {
   return (
     <Card
       sx={{ maxWidth: 400, minHeight: 400, maxHeight: 400, overflow: "auto" }}
-      className="flex flex-col justify-start bg-gray-300"
+      className="flex flex-col justify-start bg-slate-600"
     >
       <AppBar position="sticky" color="default">
         <CardHeader title={"Github Users"} className="text-center" />
@@ -34,11 +34,11 @@ const GithubUsers = () => {
 const User = ({ user }: any) => {
   const { id, name, jiraTicket } = user;
   return (
-    <CardContent className="flex justify-between items-center bg-gray-300">
+    <CardContent className="flex justify-between items-center bg-slate-600">
       <Typography
         variant="h5"
         component="div"
-        className="outline flex-grow pl-2 rounded-md outline-gray-400"
+        className="outline flex-grow pl-2 rounded-md outline-gray-300"
       >
         {name}
         <Typography>{`Jira Ticket: ${jiraTicket} `}</Typography>

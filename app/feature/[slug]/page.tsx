@@ -9,6 +9,7 @@ import Link from "next/link";
 import TableHeader from "@/components/TableHeader";
 import GithubUsers from "@/components/GithubUsers";
 import LineGraph from "@/components/LineGraph";
+import FeatureDetails from "@/components/FeatureDetails";
 
 // interface ChartData {
 //   testType: string;
@@ -112,7 +113,7 @@ export default function FeatureComponent() {
 </div>
       <TableContainer
             component={Paper}
-            className="w-full"
+            className="w-full mb-10"
             sx={{ maxHeight: '500px' }}
         >
       <Table>
@@ -135,6 +136,7 @@ export default function FeatureComponent() {
       </TableBody>
       </Table>
       </TableContainer>
+      <FeatureDetails />
     </>
   );
 }
