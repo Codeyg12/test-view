@@ -38,8 +38,8 @@ interface TestScenariosChartProps {
   testData: TestData;
 }
 
-// const COLOR_PALETTE = ["#81ef51", "#f44336"];
-const COLOR_PALETTE = ['#4CAF50', '#F44336'];
+const COLOR_PALETTE = ["#81ef51", "#f44336"];
+// const COLOR_PALETTE = ['#4CAF50', '#F44336'];
 
 const TestScenariosChart: React.FC<TestScenariosChartProps> = ({ testData }) => {
   const chartRef = useRef(null);

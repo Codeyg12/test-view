@@ -17,9 +17,9 @@ const GithubUsers = () => {
   return (
     <Card
       sx={{ maxWidth: 400, minHeight: 400, maxHeight: 400, overflow: "auto" }}
-      className="flex flex-col justify-start bg-slate-600"
+      className="flex flex-col justify-start"
     >
-      <AppBar position="sticky" color="default">
+      <AppBar position="sticky" className="bg-slate-800">
         <CardHeader title={"Github Users"} className="text-center" />
         <Toolbar id="back-to-top-anchor" className="hidden" />
       </AppBar>
@@ -27,7 +27,6 @@ const GithubUsers = () => {
         <User user={user} key={idx} />
       ))}
     </Card>
-    // https://mui.com/material-ui/
   );
 };
 
@@ -38,7 +37,7 @@ const User = ({ user }: any) => {
       <Typography
         variant="h5"
         component="div"
-        className="outline flex-grow pl-2 rounded-md outline-gray-300"
+        className="outline flex-grow pl-2 rounded-md outline-gray-300 text-slate-50"
       >
         {name}
         <Typography>{`Jira Ticket: ${jiraTicket} `}</Typography>

@@ -25,7 +25,7 @@ const TestTable = () => {
                                         textDecoration: 'none'
                                     }}
                                 >
-                                    {data.feature}.feature
+                                    test/repo/{data.feature}Tests.feature
                                 </Link>
                             </TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.passed}</TableCell>

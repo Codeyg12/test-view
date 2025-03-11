@@ -1,6 +1,6 @@
 [
   {
-    "feature": "Login Authentication",
+    "feature": "LoginAuthentication",
     "steps": {
       "passed": 12,
       "failed": 2,
@@ -14,7 +14,7 @@
     "status": "Passed"
   },
   {
-    "feature": "User Registration",
+    "feature": "UserRegistration",
     "steps": {
       "passed": 10,
       "failed": 3,
@@ -28,7 +28,7 @@
     "status": "Failed"
   },
   {
-    "feature": "User Profile",
+    "feature": "UserProfile",
     "steps": {
       "passed": 8,
       "failed": 4,
@@ -42,7 +42,7 @@
     "status": "Failed"
   },
     {
-        "feature": "User Dashboard",
+        "feature": "UserDashboard",
         "steps": {
         "passed": 15,
         "failed": 0,
@@ -56,7 +56,7 @@
         "status": "Passed"
     },
     {
-        "feature": "User Settings",
+        "feature": "UserSettings",
         "steps": {
         "passed": 12,
         "failed": 2,
@@ -70,7 +70,7 @@
         "status": "Passed"
     },
     {
-        "feature": "Login Authentication",
+        "feature": "LoginAuthentication",
         "steps": {
           "passed": 12,
           "failed": 2,
@@ -84,7 +84,7 @@
         "status": "Passed"
       },
       {
-        "feature": "User Registration",
+        "feature": "UserRegistration",
         "steps": {
           "passed": 10,
           "failed": 3,
@@ -98,7 +98,7 @@
         "status": "Failed"
       },
       {
-        "feature": "User Profile",
+        "feature": "UserProfile",
         "steps": {
           "passed": 8,
           "failed": 4,
@@ -112,7 +112,7 @@
         "status": "Failed"
       },
         {
-            "feature": "User Dashboard",
+            "feature": "UserDashboard",
             "steps": {
             "passed": 15,
             "failed": 0,
@@ -126,7 +126,7 @@
             "status": "Passed"
         },
         {
-            "feature": "User Settings",
+            "feature": "UserSettings",
             "steps": {
             "passed": 12,
             "failed": 2,
@@ -140,7 +140,7 @@
             "status": "Passed"
         },
         {
-            "feature": "Login Authentication",
+            "feature": "LoginAuthentication",
             "steps": {
               "passed": 12,
               "failed": 2,
@@ -154,7 +154,7 @@
             "status": "Passed"
           },
           {
-            "feature": "User Registration",
+            "feature": "UserRegistration",
             "steps": {
               "passed": 10,
               "failed": 3,
@@ -168,7 +168,7 @@
             "status": "Failed"
           },
           {
-            "feature": "User Profile",
+            "feature": "UserProfile",
             "steps": {
               "passed": 8,
               "failed": 4,
@@ -182,7 +182,7 @@
             "status": "Failed"
           },
             {
-                "feature": "User Dashboard",
+                "feature": "UserDashboard",
                 "steps": {
                 "passed": 15,
                 "failed": 0,
@@ -196,7 +196,7 @@
                 "status": "Passed"
             },
             {
-                "feature": "User Settings",
+                "feature": "UserSettings",
                 "steps": {
                 "passed": 12,
                 "failed": 2,
