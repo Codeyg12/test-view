@@ -9,12 +9,12 @@ import TreeMap from "./components/TreeMap";
 export default function Home() {
   return (
     <>
-    {/* https://echarts.apache.org/examples/en/editor.html?c=treemap-sunburst-transition */}
-      {/* <div className="flex">
-        <PieChart chartData={[{ testType: 'Features', failures: 25, passes: 75 }]} />
-        <PieChart chartData={[{ testType: 'Scenarios', failures: 50, passes: 50 }]} />
-        <PieChart chartData={[{ testType: 'Steps', failures: 37, passes: 63 }]} />
-      </div> */}
+    <h1 className="text-center">Test Repo</h1>
+      <div className="flex mb-10">
+        <PieChart chartData={[{ testType: 'Features', passes: 75, failures: 25 }]} />
+        <PieChart chartData={[{ testType: 'Scenarios', passes: 50, failures: 50 }]} />
+        <PieChart chartData={[{ testType: 'Steps', passes: 63, failures: 37 }]} />
+      </div>
       {/* <GithubUsers /> */}
       {/* <div className="w-1/2">
         <LineGraph />

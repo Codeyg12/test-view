@@ -1,5 +1,6 @@
 import { Table, TableCell, TableContainer, TableHead, TableRow, TableBody, Paper } from "@mui/material";
 import dummyData from "../../dummyData.json"
+import Link from "next/link";
 
 const TestTable = () => {
     // Header background colors
@@ -95,7 +96,17 @@ const TestTable = () => {
                 <TableBody>
                     {dummyData.map((data, index) => (
                         <TableRow key={index}>
-                            <TableCell sx={{ borderRight: '2px solid black' }}>{data.feature}.feature</TableCell>
+                            <TableCell sx={{ borderRight: '1px solid #ddd' }}>
+                                <Link 
+                                    href={`/feature/${data.feature}`} 
+                                    style={{ 
+                                        color: '#1976d2', 
+                                        textDecoration: 'none'
+                                    }}
+                                >
+                                    {data.feature}.feature
+                                </Link>
+                            </TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.passed}</TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.failed}</TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.skipped}</TableCell>
