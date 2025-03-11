@@ -22,41 +22,51 @@ echarts.use([
   CanvasRenderer
 ]);
 
+interface TestData {
+  testType: string;
+  total: number;
+  passed: number;
+  failed: number;
+  scenarios: {
+    name: string;
+    status: 'pass' | 'fail';
+    steps?: number;
+  }[];
+}
+
+interface TestScenariosChartProps {
+  testData: TestData;
+}
+
 // const COLOR_PALETTE = ["#81ef51", "#f44336"];
 const COLOR_PALETTE = ['#4CAF50', '#F44336'];
 
-const TestScenariosChart = () => {
+const TestScenariosChart: React.FC<TestScenariosChartProps> = ({ testData }) => {
   const chartRef = useRef(null);
 
-  // Sample test data
-  const testData = {
-    features: [
-      {
-        name: 'User Login Feature',
-        total: 10,
-        passed: 7,
-        failed: 3,
-        scenarios: [
-          { name: 'Valid Login', status: 'pass', steps: 4 },
-          { name: 'Invalid Password', status: 'fail', steps: 3 },
-          { name: 'Password Reset', status: 'pass', steps: 5 },
-          { name: 'User Lockout', status: 'fail', steps: 2 },
-          { name: 'User Registration', status: 'pass', steps: 3 },
-          { name: 'User Profile Update', status: 'pass', steps: 4 },
-          { name: 'User Logout', status: 'pass', steps: 2 },
-        ]
-      }
-    ]
-  };
+  // const testData = {
+  //       testType: 'Scenarios',
+  //       total: 10,
+  //       passed: 7,
+  //       failed: 3,
+  //       scenarios: [
+  //         { name: 'Valid Login', status: 'pass', steps: 4 },
+  //         { name: 'Invalid Password', status: 'fail', steps: 3 },
+  //         { name: 'Password Reset', status: 'pass', steps: 5 },
+  //         { name: 'User Lockout', status: 'fail', steps: 2 },
+  //         { name: 'User Registration', status: 'pass', steps: 3 },
+  //         { name: 'User Profile Update', status: 'pass', steps: 4 },
+  //         { name: 'User Logout', status: 'pass', steps: 2 },
+  //       ]
+  // };
 
   useEffect(() => {
     const chartDom = chartRef.current;
     const myChart = echarts.init(chartDom);
 
-    // Donut chart option
     const donutOption = {
       title: {
-        text: 'Test Scenarios Overview',
+        text: `Test ${testData.testType} Overview`,
         left: 'center'
       },
       tooltip: {
@@ -93,11 +103,11 @@ const TestScenariosChart = () => {
           },
           data: [
             { 
-              value: testData.features[0].passed, 
+              value: testData.passed, 
               name: 'Passed',
             },
             { 
-              value: testData.features[0].failed, 
+              value: testData.failed, 
               name: 'Failed',
             }
           ],
@@ -109,7 +119,7 @@ const TestScenariosChart = () => {
     // Treemap chart option
     const treemapOption = {
       title: {
-        text: 'Scenario Breakdown',
+        text: `${testData.testType} Breakdown`,
         left: 'center'
       },
       tooltip: {
@@ -117,13 +127,13 @@ const TestScenariosChart = () => {
       },
       series: [
         {
-          name: 'Scenarios',
+          name: `${testData.testType}`,
           type: 'treemap',
           roam: false,
           nodeClick: false,
-          data: testData.features[0].scenarios.map(scenario => ({
+          data: testData.scenarios.map(scenario => ({
             name: scenario.name,
-            value: scenario.steps,
+            value: testData.testType === 'Steps' ? testData.scenarios.length : scenario.steps,
             itemStyle: {
               color: scenario.status === 'pass' ? '#4CAF50' : '#F44336'
             }
@@ -132,7 +142,6 @@ const TestScenariosChart = () => {
       ]
     };
 
-    // Toggle between donut and treemap
     let isDonut = true;
     myChart.on('click', () => {
       isDonut = !isDonut;
