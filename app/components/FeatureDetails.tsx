@@ -62,8 +62,13 @@ const FeatureDetailsData = [
 ];
 
 const FeatureDetails = () => {
-    const [openScenarios, setOpenScenarios] = useState(Array(FeatureDetailsData.length).fill(false));
-    const [openStepsSection, setOpenStepsSection] = useState(Array(FeatureDetailsData.length).fill(false));
+    const [openScenarios, setOpenScenarios] = useState(
+        FeatureDetailsData.map(scenario => scenario.steps.some(step => step.status === "fail"))
+    );
+    // const [openStepsSection, setOpenStepsSection] = useState(Array(FeatureDetailsData.length).fill(false));
+    const [openStepsSection, setOpenStepsSection] = useState(
+        FeatureDetailsData.map(scenario => scenario.steps.some(step => step.status === "fail"))
+    );
 
     const handleScenarioClick = (index: number) => {
         setOpenScenarios(openScenarios.map((state, i) => (i === index ? !state : state)));
