@@ -2,6 +2,7 @@ import { Table, TableCell, TableContainer, TableHead, TableRow, TableBody, Paper
 import dummyData from "../../dummyData.json"
 
 const TestTable = () => {
+    // Header background colors
     const headerStyles = {
         features: { backgroundColor: "#e3f2fd" }, 
         steps: { backgroundColor: "#e8f5e9" },     
@@ -13,7 +14,7 @@ const TestTable = () => {
         <TableContainer 
             component={Paper} 
             className="w-full" 
-            sx={{ maxHeight: '800px' }} 
+            sx={{ maxHeight: '500px' }} 
         >
             <Table stickyHeader>
                 <TableHead>
@@ -61,39 +62,40 @@ const TestTable = () => {
                             align="center"
                             sx={{
                                 ...headerStyles.status,
-                                fontWeight: 'bold'
+                                fontWeight: 'bold',
                             }}
                         >
                             Status
                         </TableCell>
                     </TableRow>
-                    <TableRow>
+                    <TableRow sx={{ borderBottom: '2px solid black' }}>
                         <TableCell sx={{ 
-                            borderRight: '1px solid #ddd',
+                            borderRight: '2px solid black',
+                            borderBottom: '2px solid black',
                             ...headerStyles.features
                         }}>
                             Feature
                         </TableCell>
 
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.steps }}>Passed</TableCell>
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.steps }}>Failed</TableCell>
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.steps }}>Skipped</TableCell>
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.steps }}>Pending</TableCell>
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.steps }}>Undefined</TableCell>
-                        <TableCell sx={{ borderRight: '2px solid black', ...headerStyles.steps }}>Total</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.steps }}>Passed</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.steps }}>Failed</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.steps }}>Skipped</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.steps }}>Pending</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.steps }}>Undefined</TableCell>
+                        <TableCell sx={{ borderRight: '2px solid black', borderBottom: '2px solid black', ...headerStyles.steps }}>Total</TableCell>
 
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.scenarios }}>Passed</TableCell>
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.scenarios }}>Failed</TableCell>
-                        <TableCell sx={{ borderRight: '2px solid black', ...headerStyles.scenarios }}>Total</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.scenarios }}>Passed</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.scenarios }}>Failed</TableCell>
+                        <TableCell sx={{ borderRight: '2px solid black', borderBottom: '2px solid black', ...headerStyles.scenarios }}>Total</TableCell>
 
-                        <TableCell sx={{ borderRight: '1px solid #ddd', ...headerStyles.status }}>Duration</TableCell>
-                        <TableCell sx={{ ...headerStyles.status }}>Status</TableCell>
+                        <TableCell sx={{ borderRight: '1px solid #ddd', borderBottom: '2px solid black', ...headerStyles.status }}>Duration</TableCell>
+                        <TableCell sx={{ borderBottom: '2px solid black', ...headerStyles.status }}>Status</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {dummyData.map((data, index) => (
                         <TableRow key={index}>
-                            <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.feature}.feature</TableCell>
+                            <TableCell sx={{ borderRight: '2px solid black' }}>{data.feature}.feature</TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.passed}</TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.failed}</TableCell>
                             <TableCell sx={{ borderRight: '1px solid #ddd' }}>{data.steps.skipped}</TableCell>
