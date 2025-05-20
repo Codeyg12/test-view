@@ -1,6 +1,7 @@
 package com.codey.test.test_visualizer_backend.controller;
 
 import com.codey.test.test_visualizer_backend.model.Feature;
+import com.codey.test.test_visualizer_backend.model.User;
 import com.codey.test.test_visualizer_backend.service.FeatureService;
 import com.codey.test.test_visualizer_backend.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +38,15 @@ public class FeatureController {
   public ResponseEntity<Feature> getFeatureById(@PathVariable Long id) {
     Optional<Feature> feature = featureService.getFeatureById(id);
     return feature.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+  }
+
+  @GetMapping("/owner/{id}")
+  public ResponseEntity<List<Feature>> getFeatureByOwnerId(@PathVariable Long id) {
+    Optional<User> user = userService.getUserById(id);
+    if (user.isPresent()) {
+      return ResponseEntity.ok(featureService.getFeaturesByOwner(user.get()));
+    }
+    return ResponseEntity.notFound().build();
   }
 
   @PostMapping

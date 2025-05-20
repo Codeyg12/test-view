@@ -1,5 +1,6 @@
 package com.codey.test.test_visualizer_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +43,7 @@ public class Feature {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
+  @JsonIgnore
   private User owner;
 
   @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true)

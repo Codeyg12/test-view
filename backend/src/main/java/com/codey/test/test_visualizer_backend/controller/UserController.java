@@ -38,6 +38,12 @@ public class UserController {
     return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
   }
 
+  @GetMapping("/username/{username}")
+  public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
+    Optional<User> user = userService.getUserByUsername(username);
+    return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+  }
+
   @PostMapping
   public ResponseEntity<User> createUser(@RequestBody User user) {
     return ResponseEntity.ok(userService.createUser(user));
