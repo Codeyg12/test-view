@@ -1,32 +1,35 @@
 package com.codey.test.test_visualizer_backend.service;
 
+import com.codey.test.test_visualizer_backend.model.Feature;
+import com.codey.test.test_visualizer_backend.model.Scenario;
+import com.codey.test.test_visualizer_backend.model.TestStatus;
+
 import java.util.List;
 import java.util.Optional;
 
-import com.codey.test.test_visualizer_backend.model.Feature;
-import com.codey.test.test_visualizer_backend.model.Scenario;
-
 public interface ScenarioService {
-    List<Scenario> getAllScenarios();
+  List<Scenario> getAllScenarios();
 
-    Optional<Scenario> getScenarioById(Long id);
+  Optional<Scenario> getScenarioById(Long id);
 
-    List<Scenario> getScenariosByFeature(Feature feature);
+  List<Scenario> getScenariosByFeature(Feature feature);
 
-    // List<Scenario> getScenariosByStatus(TestStatus status);
+  List<Scenario> getScenariosByStatus(TestStatus status);
 
-    // List<Scenario> getScenariosByFeatureAndStatus(Feature feature, TestStatus
-    // status);
-    List<Scenario> getScenariosByFeatureAndStatus(Feature feature);
+  List<Scenario> getScenariosByFeatureAndStatus(Feature feature, TestStatus
+      status);
 
-    Scenario createScenario(Scenario scenario);
+  List<Scenario> getScenariosByFeatureAndStatus(Feature feature);
 
-    Scenario updateScenario(Scenario scenario);
+  Scenario createScenario(Scenario scenario);
 
-    void deleteScenario(Long id);
+  Scenario updateScenario(Scenario scenario);
 
-    // void updateScenarioStatus(Long scenarioId, TestStatus status);
-    void updateScenarioStatus(Long scenarioId);
+  void deleteScenario(Long id);
 
-    void updateExecutionTime(Long scenarioId, Long executionTimeMs);
+  void updateScenarioStatus(Long scenarioId, TestStatus status);
+
+  void updateScenarioStatus(Long scenarioId);
+
+  void updateExecutionTime(Long scenarioId, Long executionTimeMs);
 }
